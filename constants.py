@@ -44,8 +44,8 @@ EMBEDDING_MODEL_NAME = "hkunlp/instructor-large"
 # Select the Model ID and model_basename
 # load the LLM for generating Natural Language responses
 
-MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGML"
-MODEL_BASENAME = "llama-2-7b-chat.ggmlv3.q4_0.bin"
+MODEL_ID = "TheBloke/WizardLM-33B-V1-0-Uncensored-SuperHOT-8K-GPTQ"
+MODEL_BASENAME = "model.safetensors"
 
 # for HF models
 # MODEL_ID = "TheBloke/vicuna-7B-1.1-HF"
