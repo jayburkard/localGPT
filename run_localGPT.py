@@ -79,7 +79,6 @@ def load_model(device_type, model_id, model_basename=None):
                 model_basename=model_basename,
                 use_safetensors=True,
                 trust_remote_code=True,
-                device="cuda:0",
                 use_triton=False,
                 quantize_config=None,
             )
