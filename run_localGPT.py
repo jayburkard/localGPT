@@ -79,9 +79,11 @@ def load_model(device_type, model_id, model_basename=None):
                 model_basename=model_basename,
                 use_safetensors=True,
                 trust_remote_code=True,
-                use_triton=False,
+                use_triton=True,
+                device_map='auto;
                 quantize_config=None,
             )
+            model.seqlen = 8192
     elif (
         device_type.lower() == "cuda"
     ):  # The code supports all huggingface models that ends with -HF or which have a .bin
@@ -115,9 +117,10 @@ def load_model(device_type, model_id, model_basename=None):
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        max_length=2048,
-        temperature=0,
+        max_length=8192,
+        temperature=0.1,
         top_p=0.95,
+        do_sample=True,
         repetition_penalty=1.15,
         generation_config=generation_config,
     )
